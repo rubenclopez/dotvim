@@ -11,7 +11,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 set nobackup    " do not keep a backup file, use versions instead
-set history=50  " keep 50 lines of command line history
+set history=250  " keep 50 lines of command line history
 set number      " line numbers
 set numberwidth=5
 set ruler       " show the cursor position all the time
@@ -81,6 +81,12 @@ endif
 if has("multi_byte")
   set fileencodings=ucs-bom,utf-8
 endif
+
+" folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
